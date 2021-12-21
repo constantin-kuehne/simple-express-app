@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= title %></title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+  </head>
+  <body>
+    <h1><%= title %></h1>
+    <h2>Bestehende</h2>
+    <ul>
+      <% cats.forEach(function(cat){ %>
+        <li><a href="/cats/<%= cat.id %>"><%= cat.name %></a></li>
+      <% }); %>
+    </ul>
+    <h2>Neuanlage</h2>
+    <form method='POST' action='/cats'>
+      <label for="name">Name der Katze:</label><br>
+      <input type="text" id="name" name="name"><br>
+      <label for="owner">Besitzer der Katze:</label><br>
+      <input type="text" id="owner" name="owner"><br><br>
+      <input type="submit" value="Submit">
+    </form>
+  </body>
+</html>
